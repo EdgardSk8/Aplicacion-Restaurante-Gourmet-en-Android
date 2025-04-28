@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
                             dialog.dismiss();
                             LoadDish();
 
-                            Toast.makeText(MainActivity.this, "El Lugar " + namedishFormateado + " Se agregó correctamente", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "El Platillo " + namedishFormateado + " Se agregó correctamente", Toast.LENGTH_SHORT).show();
 
                         } else {
                             // Mostrar un mensaje de error si el nombre de la ciudad está vacío
@@ -292,11 +292,11 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.itemEditar:
-                // Obtener el ID del lugar seleccionada
+                // Obtener el ID del Platillo seleccionada
 
                 long dishid = info.id;
 
-                // Obtener el nombre del Lugar de la base de datos utilizando el ID
+                // Obtener el nombre del platillo de la base de datos utilizando el ID
                 String[] projection = {
                         DishEntry.COLUMN_NAME_DISH,
                         DishEntry.COLUMN_DESCRIPTION_DISH,
@@ -317,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Verificar si se encontró la ciudad
                 if (cursor != null && cursor.moveToFirst()) {
-                    // Obtener el nombre del lugar
+                    // Obtener el nombre del Platillo
 
                     String namedish = cursor.getString(cursor.getColumnIndexOrThrow(DishEntry.COLUMN_NAME_DISH));
                     String descriptiondish = cursor.getString(cursor.getColumnIndexOrThrow(DishEntry.COLUMN_DESCRIPTION_DISH));
@@ -348,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
-                            // Obtener el nuevo nombre del lugar del EditText
+                            // Obtener el nuevo nombre del platillo del EditText
                             String newnamedish = editTextDishName.getText().toString().trim();
                             String newdescriptiondish = editTextDishDescription.getText().toString().trim();
                             String newpricedish = editTextPriceDish.getText().toString().trim();
@@ -359,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
                                 return; // Salir del método onClick sin ejecutar la actualización
                             }
 
-                            // Actualizar el nombre del lugar en la base de datos
+                            // Actualizar el nombre del platillo en la base de datos
                             ContentValues values = new ContentValues();
 
                             values.put(DishEntry.COLUMN_NAME_DISH, newnamedish);
@@ -373,11 +373,11 @@ public class MainActivity extends AppCompatActivity {
 
                             // Verificar si la actualización fue exitosa
                             if (rowsUpdated > 0) {
-                                Toast.makeText(MainActivity.this, "Lugar actualizado correctamente", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Platillo actualizado correctamente", Toast.LENGTH_SHORT).show();
                                 LoadDish(); // Recargar la lista de ciudades
                                 dialog.dismiss(); // Cerrar el cuadro de diálogo
                             } else {
-                                Toast.makeText(MainActivity.this, "Error al actualizar el lugar", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Error al actualizar el Platillo", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                 } else {
                     // Mostrar un mensaje si no se encontró la ciudad
-                    Toast.makeText(this, "No se encontró el Lugar", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "No se encontró el Platillo", Toast.LENGTH_SHORT).show();
                 }
 
                 // Cerrar el cursor
