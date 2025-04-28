@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:layout_margin="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/imageViewDish"
+            android:scaleType="centerCrop"
+            android:foregroundGravity="center"
+            android:elevation="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            app:shapeAppearanceOverlay="@style/radiusimage"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textviewdishid"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textviewdishdescription"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textviewpricelocalization"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/textViewDishName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewDish"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            android:textStyle="bold|italic"
+
+            android:layout_marginHorizontal="5dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="5dp"
+            android:elevation="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_textview"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Contraseña" />
+
+    <Button
+        android:id="@+id/btnpermissionscancel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Cancelar"/>
+
+    <Button
+        android:id="@+id/btnpermissionsaceept"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Aceptar"/>
+
+</LinearLayout>
